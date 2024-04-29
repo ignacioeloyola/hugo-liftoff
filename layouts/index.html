@@ -16,8 +16,8 @@
           {{ $s_cta = . }}
         {{ end }}
         <a class="btn-primary"
-           href="{{ with $p_cta }}{{ . | relURL }}{{ else }}{{ "about" | relURL }}{{ end }}">
-           {{ if $p_cta }}{{ with .Site.GetPage $p_cta }}{{ .LinkTitle }}{{ end }}{{ else }}About{{ end }}
+           href="https://cards.nachologic.com">
+           My Resume | Contact
         </a>
         <a class="btn-secondary"
            href="{{ with $s_cta }}{{ . | relURL }}{{ else }}{{ "projects" | relURL }}{{ end }}">
