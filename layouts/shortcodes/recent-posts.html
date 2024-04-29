@@ -22,7 +22,7 @@
   {{ if not $num }}
     {{ $num = 10 }}
   {{ end }}
-  {{ range (where site.RegularPages "Section" "posts" | first $num) }}
+  {{ range (where site.RegularPages.ByDate.Reverse "Section" "posts" | first $num) }}
     <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
       {{ partial "posts/post-entry.html" . }}
       <div class="post-entry-divider"></div>
