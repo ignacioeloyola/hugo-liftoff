@@ -1,6 +1,21 @@
 <header class="container">
   <nav class="main-nav" id="js-navbar">
-    <a class="logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+
+    {{ $logo := .Site.Params.logo }}
+    {{ $default_logo := "images/default-logo.svg" }}
+    {{ $logo_image := "" }}
+    {{ with $logo }}
+      {{ $logo_image = readFile (printf "static/%s" $logo) }}
+    {{ else }}
+      {{ $logo_image = readFile (printf "static/%s" $default_logo) }}
+    {{ end }}
+    
+    <!-- Inline the SVG content -->
+    <a class="logo" href="{{ .Site.BaseURL }}">
+      {{ $logo_image | safeHTML }}
+    </a>
+
+
     <ul class="menu" id="js-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}

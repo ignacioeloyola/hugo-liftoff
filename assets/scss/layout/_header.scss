@@ -38,6 +38,19 @@
   }
 }
 
+#logito {
+  width: 10rem;
+  height: auto;
+}
+
+#logito .black {
+    fill: var(--color-text);
+}
+
+#logito .black-stroke {
+    stroke: var(--color-text);
+}
+
 .menu-link {
   color: var(--color-text);
 
